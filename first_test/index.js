@@ -19,13 +19,14 @@ let string = "";
 let arr = Array.from(buttons);
 
 function average(inputBox) {
-    inputBox.split(",");
+    let splitArray = inputBox.split(",");
     let average = 0;
-    for (let i = 0; i < inputBox.length; i++) {
-        let currentNum = array[i]
-        average += currentNum;
+    for (let i = 0; i < splitArray.length; i++) {
+      console.log(splitArray[i]);
+      average += Number(splitArray[i]);
     }
-    average = average / inputBox.length
+    average = average / splitArray.length;
+    return average;
 }
 
 arr.forEach(button => {
@@ -41,6 +42,7 @@ arr.forEach(button => {
             input.value = string;
         } else if (e.target.innerHTML == 'avg.') {
             string = average(string);
+            console.log(string);
             input.value = string;
         } else {
             string += e.target.innerHTML;
